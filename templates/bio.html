@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="bio_container">
+        <img src="{{url_for('static', filename='kuchawe.jpg')}}" loading="lazy" class="bio_img">
+        <p class="pro_description">
+            My name is Comfort Benedicto Banda. I am a Fourth Year student at the <a href="https://www.unima.ac.mw">University of Malawi</a>, studying Bachelor of Education (Computer Science). I'm from Blantyre, Malawi, currently residing in Zomba, Malawi.
+            <br>
+            <br>
+            I'm a creative, specially interested in Interaction Design, full-stack development, Cyber Security and GeoSpatial Information Science. On top of that, I'm also a passionate Computer Science Educator. My program of study is multi-faceted; allowing me to focus on the two fields of Computer Science and Computer Science Education, simultaneously.
+            <br>
+            <br>
+            I enjoy music, art, movies, food and outdoor activities. I play the guitar, piano and drawing. I enjoy watching and playing football. I also love cats and enjoy admiring the beautiful things around us in nature. I love hiking and general outdoor fun. I love eating, especially trying out new food.
+            <br>
+            <br>
+            Let us work together on your project, either in web design and development or illuminating human minds with the wonderous light of technology through Computer Science Education at various levels including secondary school education and personal tutoring in several fields including Software Engineering, Computer Networking, Computer Programming, Theoretical Computer Science and others!
+            <br>
+            <br>
+            For more information and collaborations, please do <a href="{{url_for('contacts')}}"> Contact Me</a>
+        </p>
+    </div>
+    {% endblock %}

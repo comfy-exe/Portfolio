@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static', filename='favicon-16x16.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <title>ADMIN DASHBOARD</title>
+</head>
+<body>
+    <nav class="nav_bar">
+        <ul class="link_list">
+            <li><a href="/" class="link">Home</a></li>
+            <li><a href="{{url_for('bio')}}" class="link">Biography</a></li>
+            <!-- <li><a href="{{url_for('projects')}}" class="link">Projects</a></li> -->
+            <li><a href="{{url_for('contacts')}}" class="link">Contacts</a></li>
+            <li><a href="{{url_for('logout')}}" class="link">Logout</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    <div class="main_content">
+        <div class="brief_details">
+            <div class="profile">
+            <img src="{{url_for('static', filename='mulunguzi.jpg')}}" loading="lazy" class="profile_pic">
+            <p class="brief_description">
+               Hello there! My name is <span style="color: aqua; font-weight: bolder;">Comfort Banda</span>. Welcome to my professional portfolio
+                <br>
+                <br>
+        </div>
+            <p class="pro_description">I'm a <a href="https://www.unima.ac.mw/programmes/search?programme=bachelor+of+education+%28computer+science%29">Computer Science</a> Student at the <a href="https://www.unima.ac.mw">University of Malawi (UNIMA)</a>, currently in Fourth Year of study. I have a special interest in Software Engineering, Interaction Design and Computer Networking, looking to delve more deeper into Cyber Security and GeoSpatial Information Science after graduation. I'm currently developing frontend skills using languages like HTML, CSS, JavaScript and it's framework React.JS together with backend skills using Python and Flask framework. I'm also learning Mobile development using Java, React Native, Kotlin and Flutter with Dart. I am also developing skills in Human-Computer interaction skills using Figma</p>
+            <img src="{{url_for('static', filename='unima_1.jpg')}}" loading="lazy" class="details_img_1">
+            <br>
+            <br>
+            <div class="edu_content">
+                <img src="{{url_for('static', filename='chimphamba.jpg')}}" loading="lazy"  class="details_img_2">
+            <p class="pro_description">I'm also a Computer Science Educator in training at the <a href="https://www.unima.ac.mw/preview-schools/school-of-education">University of Malawi (UNIMA)</a> under the School of Education. I have done peer teaching at Third year, at the <a href="https://www.unima.ac.mw/preview-schools/school-of-education">University of Malawi (UNIMA)</a> and expecting to do micro-teaching at Fourth Year at a nearby secondary school. I have a special interest in Curriculum Design and Development, Educational Testing and Measurement, Educational Psychology, Instructional Media and Technology and Philosophy of Education and i'm planning on going deeper into these in my Post-graduate studies</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
+</body> 
+</html>

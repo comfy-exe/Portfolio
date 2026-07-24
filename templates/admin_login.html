@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+    <title>ADMIN LOGIN</title>
+</head>
+<body class="login_body">
+    <div class="header">
+        <h1 class="login_heading">ADMIN LOGIN</h1>
+    <br>
+    <br>
+    </div>
+    
+
+    <form method="post" class="login">
+        {% if error %}
+            <p class="error">{{error}}</p>
+        {% endif %}
+        <label for="username" class="login_label">ENTER USERNAME</label>
+        <br>
+        <input class="login_input" type="text" name="username" maxlength="50" placeholder="            your admin username..." required>
+        <br>
+        <br>
+        <label for="password" class="login_label">ENTER PASSWORD</label>
+        <br>
+        <input class="login_input" type="password" name="password" maxlength="16" placeholder="             your admin password..." required>
+        <br>
+        <br>
+        <button class="login_button" type="submit">LOGIN</button>
+        <br>
+        <br>
+        <br>
+        <a href="{{url_for('home')}}" class="link">Back to Portfolio</a>
+    </form>
+</body>
+</html>
