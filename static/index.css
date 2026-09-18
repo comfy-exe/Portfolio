@@ -48,6 +48,7 @@
     border-width: 3px;
     border-color: gold;
     border-style: groove;
+    font-weight: bold;
 }
 
 .link:hover {
@@ -158,11 +159,14 @@ i {
 .contacts_container {
     display: flex;
     text-align: center;
+    height: fit-content;
 }
 
 #contacts_description {
-    text-align: center;
+    border-radius: 20px;
+    padding: 1rem;
     margin-left: 30%;
+    border: 3px groove aqua;
 }
 
 .contact_heading {
@@ -171,62 +175,35 @@ i {
     margin: 0 0 4rem 0;
 }
 
-#contact_form {
-    border: 3px groove gold;
-    margin: 2rem;
-    padding: 2rem;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    height: fit-content;
-}
-
-#contact_form label {
-    color: gold;
-    font-weight: bold;
-    margin-left: 1rem;
-}
-
-#contact_form input {
-    padding: 0.5rem;
-    padding-left: 1rem;
-    margin: 1rem;
-    border-radius: 20px;
-    border: 3px groove aqua;
-    color: white;
-    width: 50dvh;
-}
-
-#contact_form input:focus {
-    border: none;
-    transform: none;
-}
-
-#contact_form textarea {
-    padding: 1rem;
-    width: 50dvh;
-    border: 3px groove aqua;
+.contact_link {
+    margin: 1rem 2rem 2rem 2rem;
     border-radius: 10px;
-    color: white;
-    field-sizing: content;
-    min-height: 3rem;
-    resize: none;
-}
-
-#contact_form textarea:focus {
-    border: none;
-    transform: none;
-}
-
-#contact_form button {
-    background-color: gold;
-    padding: 1rem;
-    border-radius: 20px;
+    padding: 8px;
     font-weight: bold;
-    font-size: medium;
-    margin-left: 30%;
-    margin-top: 1rem;
+}
+
+#phone_link {
+    border: none;
+    background-color: rgb(5, 87, 5);
+    color: white;
+}
+
+#mail_link {
+    border: none;
+    background-color: rgb(199, 4, 4);
+    color: white;
+}
+
+#whatsapp_link {
+    border: none;
+    background-color: white;
+    color: rgb(3, 77, 3);
+}
+
+#facebook_link {
+    color: white;
+    border: none;
+    background-color: blue;
 }
 
 /* For the admin login page */

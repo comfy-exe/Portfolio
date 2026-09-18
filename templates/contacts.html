@@ -6,49 +6,31 @@
             Let us work together on your project!
             <br>
             <br>
-            For more information and collaborations, send me an Email at <span style="color: aqua;">bandacomfo13@gmail.com</span>
+            For more information and collaborations:
             <br>
-            I usually respond within 24 hours. You can also contact me on <a href="https://www.facebook.com/comfort.benedicto.banda">Facebook</a>
+            <br>
+            <br>
+            <a href="tel:{{contact.phone_1}}" class="contact_link" id="phone_link">Call Me</a> 
+            <br>
+            <br>
+            <br>
+            <a href="https://wa.me/{{contact.phone_1}}" target="_blank" id="whatsapp_link" class="contact_link">WhatsApp</a>
+            <br>
+            <br>
+            <br>
+            <a href="mailto:{{contact.email}}?subject=CONTACT%20FROM%20YOUR%20PORTFOLIO" class="contact_link" id="mail_link" target="_blank">Send Me an Email</a>
+            <br>
+            <br>
+            <br>
+            <a href="https://m.me/Comfort.Benedicto.Banda" target="_blank" id="facebook_link" class="contact_link">Text Me on Facebook</a>
+            <br>
+            <br>
+            <br>
+            I usually respond as soon as possible, within 24 hours!
             <br>
             <br>
             
         </p>
 
-         <!-- <form method="POST" id="contact_form">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% for category, message in messages %}
-                    <p style="color: red;">{{message}}</p>
-                {% endfor %}
-            {% endwith %}
-
-            <h2 class="contact_heading">MESSAGE ME</h2>
-
-            <label for="name">YOUR NAME</label>
-            <br>
-            <input type="text" name="name" placeholder="type your name here..." required>
-            <br>
-            <br>
-            <label for="email">YOUR EMAIL ADDRESS</label>
-            <br>
-            <input type="email" name="email" required placeholder="example@gmail.com">
-            <br>
-            <br>
-            <label for="message">YOUR MESSAGE</label>
-            <br>
-            <textarea name="message" id="message" required ></textarea>
-            <br>
-            <br>
-            <br>
-            <button type="submit" id="submit_btn">Send Message</button>
-         </form>
-
-         <script>
-            document.getElementById('contact_form').addEventListener('submit', (e) => {
-                const submit_btn = document.getElementById('submit_btn');
-                
-                submit_btn.textContent = "Sending your message..."
-                submit_btn.disabled = true;
-            });
-         </script> -->
     </div>
 {% endblock %}

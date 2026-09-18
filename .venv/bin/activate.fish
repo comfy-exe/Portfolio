@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/comfort-banda/Desktop/Projects/Flask_App/.venv
+set -gx VIRTUAL_ENV /home/comfort-banda/Desktop/Projects/Portfolio/.venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

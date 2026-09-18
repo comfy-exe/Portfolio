@@ -2,13 +2,7 @@ from flask import Flask, request, jsonify, render_template, url_for, redirect, s
 import bcrypt
 import psycopg2
 from psycopg2.extras import RealDictCursor
-import os
-import smtplib
-from datetime import datetime
 from dotenv import load_dotenv
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email_validator import validate_email
 
 
 load_dotenv()
@@ -100,91 +94,13 @@ def projects():
 
 @app.route('/contacts')
 def contacts():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        sender_email = request.form.get('email')
-        message = request.form.get('message')
-        valid_sender_email = validate_sender_email(sender_email)
+    contact_info = {
+        "phone_1" : +265887766457,
+        "phone_2" : +265997042188,
+        "email" : "bandacomfo13@gmail.com"
+    }
 
-        if not valid_sender_email:
-            return flash('Email not valid!', 'danger')
-        
-        data = {
-            "name" : name,
-            "email" : valid_sender_email,
-            "message" : message
-        }
-
-        success = send_email(data)
-
-        if success == True:
-            flash('Your Email as been sent successfully! I will respond to you as soon as possible!', 'success')
-
-        else:
-            flash('Error sending email! Sending failed.', 'error')
-
-
-    return render_template('contacts.html')
-
-def validate_sender_email(email):
-    try:
-        valid_email = validate_email(email)
-        return True, valid_email.email
-    except EmailNotValidError as e:
-        return False, str(e)
-
-
-def send_email(data):
-    #Email Configuration for SMTP
-    SMTP_HOST = os.environ.get('EMAIL_HOST')
-    SMTP_PORT = os.environ.get('EMAIL_PORT', 587)
-    SMTP_USER = os.environ.get('EMAIL_USER')
-    SMTP_USER = data.get('email')
-    SMTP_PASSWORD = os.environ.get('EMAIL_PASSWORD')
-    RECIPIENT_EMAIL = os.environ.get('EMAIL_RECIPIENT')
-
-    try:
-        msg = MIMEMultipart('alternative')
-        msg['from'] = SMTP_USER
-        msg['to'] = RECIPIENT_EMAIL
-
-        name = data.get('name')
-        email = data.get('email')
-        message = data.get('message')
-
-        plain_text = """
-            NEW CONTACT FORM SUBMISSION
-
-
-            Name: {name}
-            Email: {email}
-
-            Subject: PORTFOLIO CONTACT
-
-            Message:
-            {message}
-
-            ______________
-            Sent: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-        """
-
-        msg_part = MIMEText(plain_text, 'plain')
-        msg.attach(msg_part)
-
-        # Actual Email sending
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASSWORD)
-            server.send_message(msg)
-        
-        return True
-
-    except smtplib.SMTPAuthenticationError:
-        return False, "Email Authentication failed! Check your Credentials."
-    except smtplib.SMTPException as e:
-        return False, f"SMTP error: {str(e)}"
-    except Exception as e:
-        return False, "Error sending email: (str(e))"
+    return render_template('contacts.html', contact = contact_info)
 
 
 if __name__=='__main__':
